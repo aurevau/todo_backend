@@ -9,7 +9,11 @@ exports.register = async(req, res, next) =>{
         res.json({status: true, success: "User Registered Successfully!"})
 
     } catch(error) {
-        throw error 
+        console.log('Register error:', error);  
+        res.status(500).json({ 
+            status: false, 
+            error: error.message 
+        });
     }
 
 };
@@ -36,7 +40,11 @@ exports.login = async(req, res, next) =>{
         res.status(200).json({status: true, token: token})
 
     } catch(error) {
-        throw error 
+         console.log('Login error:', error);  
+        res.status(500).json({ 
+            status: false, 
+            error: error.message 
+        });
     }
 
 };
