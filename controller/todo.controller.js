@@ -17,7 +17,7 @@ exports.getUserTodos = async (req, res, next) => {
         const {userId} = req.body;
         let todos = await ToDoServices.getTodoData(userId);
 
-        res.json({status: true, success: todo});
+        res.json({status: true, success: todos});
 
     } catch(error) {
         next(error);
