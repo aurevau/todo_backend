@@ -9,7 +9,7 @@ class ToDoServices {
 
      static async getTodoData(userId) {
         const todoData = await TodoModel.find({userId})
-        return await todoData;
+        return todoData;
     }
 }
 
