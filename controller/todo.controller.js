@@ -14,7 +14,7 @@ exports.createTodo = async (req, res, next) => {
 
 exports.getUserTodos = async (req, res, next) => {
     try {
-        const {userId} = req.body;
+        const {userId} = req.query;
         let todos = await ToDoServices.getTodoData(userId);
 
         res.json({status: true, success: todos});
