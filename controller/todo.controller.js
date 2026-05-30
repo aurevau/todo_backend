@@ -23,3 +23,15 @@ exports.getUserTodos = async (req, res, next) => {
         next(error);
     }
 }
+
+exports.deleteTodo = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        let deleted = await ToDoServices.deleteTodo(id);
+
+        res.json({status: true, success: deleted});
+
+    } catch(error) {
+        next(error);
+    }
+}
